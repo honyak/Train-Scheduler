@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Scheduler</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <style>
+        #jumbo {
+            background-color: #7F462B;
+            color: lightblue;
+            margin-left: 0rem !important;
+            margin-right: 0rem !important;
+            margin-top: 1rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        th, tr {
+            font-weight: 200;
+            
+        }
+        /* Transparent Effect for the border below the headers */
+        .table>:not(:last-child)>:last-child>* {
+            border-color: rgba(111,111,111,0.2) transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-lg !direction !spacing">
+
+        <div class=" p-5 rounded-lg m-3" id="jumbo">
+            <h1 class="display-4 text-center">Anytime is Train Time</h1>
+            <p class="lead text-center">Choo Choo. Chee Chee. Hop on the <em style="color:white;">train</em> with me</p>
+        </div>
+
+        <div class="card-mb4 border border-primary rounded">
+            <div class="card-head bg-primary text-white pt-2 pb-2 pl-2">
+                Current Train Schedule
+            </div>
+            <div class="card-body table-responsive">
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trainScheduleArea">
+                        <!-- THIS IS whAT EACH INDIVIDUAL EMPLOYEE OBJECT WILL LOOK LIKE
+                        <tr>
+                            <td>Train Name</td>
+                            <td>Destination</td>
+                            <td>Frequency</td>
+                            <td>Next Arrival</td>
+                            <td>Minutes Away</td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+
+        <div class="card-mb4 border border-primary rounded mb-4">
+            <div class="card-head bg-primary text-white pt-2 pb-2 pl-2">
+               Add Train
+            </div>
+            <div class="card-body">
+
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-12">
+                        <label class="form-label">Train Name</label>
+                        <input type="text" class="form-control" id="name-input" value="" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Destination</label>
+                        <input type="text" class="form-control" id="destination-input" value="" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">First Train Time (HH:mm - military time)</label>
+                        <input type="text" class="form-control" id="firstTime-input" value="" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Frequency (min)</label>
+                        <input type="text" class="form-control" id="freq-input" value="" required>
+                    </div>
+                    <div class="col-12">
+                        <div class="float-left">
+                            <button class="btn btn-primary" id="submitTrain" type="submit">Submit</button>
+                            <button class="btn btn-secondary" id="reset">Delete All</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Script -->
+    <script src="train.js"></script>
+</body>
+
+</html>
