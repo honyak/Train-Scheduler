@@ -16,23 +16,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Odibee+Sans&display=swap" rel="stylesheet">
+
     <style>
         #jumbo {
             background-color: #7F462B;
-            color: lightblue;
             margin-left: 0rem !important;
             margin-right: 0rem !important;
             margin-top: 1rem !important;
             margin-bottom: 1rem !important;
-        }
-
-        th, tr {
-            font-weight: 200;
             
         }
+        #jumbo>h1{
+            font-size:5rem;
+            font-family: 'Odibee Sans', cursive;
+            letter-spacing: 0.25rem;
+        }
+        #jumbo>p {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        th,
+        tr {
+            font-weight: 200;
+
+        }
+
         /* Transparent Effect for the border below the headers */
         .table>:not(:last-child)>:last-child>* {
-            border-color: rgba(111,111,111,0.2) transparent;
+            border-color: rgba(111, 111, 111, 0.2) transparent;
         }
     </style>
 </head>
@@ -40,7 +54,7 @@
 <body>
     <div class="container-lg !direction !spacing">
 
-        <div class=" p-5 rounded-lg m-3" id="jumbo">
+        <div class=" p-5 rounded-lg m-3 text-primary" id="jumbo">
             <h1 class="display-4 text-center">Anytime is Train Time</h1>
             <p class="lead text-center">Choo Choo. Chee Chee. Hop on the <em style="color:white;">train</em> with me</p>
         </div>
@@ -79,7 +93,7 @@
 
         <div class="card-mb4 border border-primary rounded mb-4">
             <div class="card-head bg-primary text-white pt-2 pb-2 pl-2">
-               Add Train
+                Add Train
             </div>
             <div class="card-body">
 
@@ -113,7 +127,7 @@
 
     </div>
     <!-- Script -->
-    <script src="train.js"></script>
+    <script src="train-guided.js"></script>
 </body>
 
 </html>

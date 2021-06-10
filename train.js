@@ -12,7 +12,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Create a variable to reference the database.
-var database = firebase.database();
+
 var trainRef = firebase.database().ref('/trainScheduler');
 
 trainRef.on("value", function (snapshot) {
